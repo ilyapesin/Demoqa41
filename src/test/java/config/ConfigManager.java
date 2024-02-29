@@ -43,7 +43,7 @@ public class ConfigManager {
             throw new IllegalArgumentException("Unknown browser: " + browser);
         }
         driver.manage().window().maximize();
-        //driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(60000));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(20000));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(60000));
         driver.navigate().to("https://demoqa.com/");
     }
