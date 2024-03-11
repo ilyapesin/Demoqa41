@@ -1,17 +1,13 @@
 package tests;
 
 import config.ConfigManager;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import pages.ElementPage;
+import pages.MainPage;
+import pages.TextBoxPage;
 
-public class BaseTest {
+public class BaseTest extends ConfigManager{
+    MainPage mainPage=new MainPage();
+    ElementPage elementPage=new ElementPage();
+    TextBoxPage textBoxPage=new TextBoxPage();
 
-@BeforeSuite
-    public void init() throws Exception {
-    ConfigManager.setUp("firefox");
-}
-@AfterSuite
-    public void stop() throws Exception {
-    ConfigManager.tearDown();
-}
 }

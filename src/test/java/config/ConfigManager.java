@@ -17,7 +17,11 @@ import java.time.Duration;
 
 public class ConfigManager {
     private static WebDriver driver;
-    private static WebDriver getDriver() {
+    public static WebDriver getDriver() {
+//        int count=0;
+//        while(driver==null||count<5) {
+//            Thread.sleep(500);
+//        }
         return driver;
     }
 
@@ -45,10 +49,15 @@ public class ConfigManager {
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(20000));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(60000));
+       // driver.navigate().to("https://demoqa.com/");
+       navigateToMainPage();
+    }
+
+    public static void navigateToMainPage() {
         driver.navigate().to("https://demoqa.com/");
     }
     @AfterSuite
     public static void tearDown() {
-        driver.quit();
+        //driver.quit();
     }
 }
